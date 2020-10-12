@@ -1,0 +1,217 @@
+\documentclass{article}
+
+\usepackage[margin = 0.3in]{geometry}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{float}
+\usepackage{makecell}	
+\usepackage{tabularx}
+\usepackage{multirow}
+%\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
+
+\titleformat{\section}
+{\large\bfseries}
+{}
+{0em}
+{}
+
+\titleformat{\subsection}
+{\large\bfseries}
+{}
+{0em}
+{}
+
+\renewcommand{\maketitle}{
+\begin{center}
+\Large{\textbf{Ashutosh Mukherjee}}\\
+\large{\textit{Email: ashutosh.mukherjeecpg@gmail.com}}\\
+\href{https://github.com/average-engineer}{\large{\textit{Github Page}}}\\
+\href{http://portfolioashutoshmukherjee.unaux.com/}{\large{\textit{Projects Website}}}\\
+\end{center}}
+
+%\hypersetup{colorlinks=true,linkcolor=BlueViolet,urlcolor=BlueViolet}
+
+\def\degree{\large{B.Tech in Mechanical Engineering}}
+\def\college{\large{\textit{Punjab Engineering College}}}
+\def\school{\large{High School (10+2)}}
+\def\sname{\large{\textit{Bhavan Vidyalaya, Chandigarh}}}
+\def\tenth{\large{Higher Secondary (10)}}
+\def\cgpa{\large{CGPA : $8.3/10$}}
+\def\boards{\large{Percent : $94.4\%$}}
+\def\tenmarks{\large{CGPA : $10/10$}}
+\def\drdodate{\large{August 2020 - Ongoing}}
+\def\siemensdate{\large{January 2019 - June 2019}}
+\def\majordaterig{\large{September 2019 - December 2019}}
+\def\majordateprop{\large{February 2020 - May 2020}}
+\def\prog{
+\begin{enumerate}
+\item\large{\textbf{Scripting Languages}}
+\begin{itemize}
+\item\large{MATLAB}
+\item\large{Python}
+\end{itemize}
+\item\large{\textbf{Programming Languages}}
+\begin{itemize}
+\item\large{C}
+\end{itemize}
+\item\large{\textbf{Markup Languages}}
+\begin{itemize}
+\item\large{HTML}
+\item\large{LaTeX}
+\end{itemize}
+\end{enumerate}}
+
+\def\soft{
+\begin{enumerate}
+\item\large{\textbf{Multi-Body Dynamics}}
+\begin{itemize}
+\item\large{MSC ADAMS}
+\item\large{Hyperworks Motionview}
+\end{itemize}
+\item\large{\textbf{Finite Element Analysis}}
+\begin{itemize}
+\item\large{ANSYS Workbench}
+\end{itemize}
+\item\large{\textbf{Computer Aided Design}}
+\begin{itemize}
+\item\large{Solidworks}
+\item\large{Autodesk Fusion 360}
+\end{itemize}
+\end{enumerate}}
+
+\def\misc{
+\begin{itemize}
+\item\large{Simulink}
+\item\large{Arduino Uno}
+\item\large{QMIL, QPROP}
+\item\large{XFOIL}
+\end{itemize}
+}
+
+\parindent 0ex %command for removing any indentation in all the paras
+
+\begin{document}
+\begin{tikzpicture}%adding border to the first page
+[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle ($(current page.south east)+(-0.1in,0.2in)$);
+
+\end{tikzpicture}
+\maketitle
+\vspace{-1 em}
+\hrulefill
+\vspace{0.1 in}
+\section{\underline{Education}}
+\vspace{-1.5 em}
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{1.5in}|m{3in}|m{1.5in}|}
+\hline 
+\large{$8/2016 - 5/2020$} & \thead{\degree \\[0.1 in] \college}\ & \cgpa \\ 
+\hline 
+\large{$4/2014 - 3/2016$} & \thead{\school \\[0.1 in] \sname} &  \boards\\ 
+\hline
+\large{$4/2013 - 3/2014$} & \thead{\tenth \\[0.1 in] \sname} & \tenmarks \\
+\hline
+\end{tabular}
+\end{table}
+\vspace{0 in}
+
+\section{\underline{Research Experience}}
+\large{\textbf{Research Assistant}}
+\hspace{4.1 in}
+\drdodate\\
+\textit{\large{Thapar Institute of Engineering and Technology, Patiala, India}}\\
+\textbf{Dynamic Modelling and Control Design of Augmentative Lower Extremity Exoskeleton}
+\begin{itemize}
+\item \large{Assistance in development of kinematic and dynamic models of the exoskeleton designed by DRDO (Defence Research and Development Organization, India) in MATLAB}
+\item\large{Validation of the developed models in ADAMS, a multi-body dynamics software}
+\item\large{Engagement in adaptive control design of the exoskeleton, using the developed dynamic model as a theoretical basis}
+\end{itemize}
+
+\section{\underline{Professional Experience}}
+\large{\textbf{Intern, Order Management and Assembly Department}}
+\hspace{1.2 in}
+\siemensdate\\
+\large{\textit{Siemens Ltd., Vadodara, India}}
+\begin{itemize}
+\item\large{Developed a solver in C for optimization of allocation of jobs (processes) to different machines present in the shop floor in order to optimize the machining lead times}
+\item\large{Designed an induction heating apparatus for heating of rotor wheel discs of steam turbines}
+\item\large{Developed a robust fixture for stator guide blade carriers of steam turbines}
+\item\large{Redesigned and fabricated a machining and blading stand for rotor wheel discs of steam turbines }
+\end{itemize}
+
+\section{\underline{Other relevant experience}}
+\large{\textbf{Undergraduate Thesis Project}}\\
+\large{\textbf{Development of a Test Rig for measuring propeller thrust}}
+\hspace{0.7 in}
+\majordaterig
+\begin{itemize}
+\item \large{Built a test stand acting as an alternative to the wind tunnel for measuring the thrust produced by a propeller mounted on it.}
+\item\large{Implemented Arduino Uno controlled circuits for driving the propeller motor and capturing and displaying the speed of the propeller using an IR sensor based tachometer.}
+\end{itemize}
+\vspace{2 in}
+
+\begin{tikzpicture}%adding border to the second page
+[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle ($(current page.south east)+(-0.1in,0.2in)$);
+
+\end{tikzpicture}
+
+\large{\textbf{Design and Analysis of a propeller for slow-flying Quadcopters}}
+\hspace{0.65 in}
+\majordateprop
+\begin{itemize}
+\item\large{Generated and modified propeller designs using QMIL based on required flying conditions and propeller thrust}
+\item\large{Used the $1^{st}$ order tool QPROP to generate propeller efficiency and thrust curves for the designed propellers and reiterated the designing process until a design giving desirable propeller performance is achieved.}
+\item\large{Assisted in design validation using CFD once the propeller showed better performance than a marker standard propeller.}
+\end{itemize}
+%\vspace{0.1 in}
+%\large{\textbf{Relevant Independent Projects}}
+\section{\underline{Relevant Independent Projects}}
+\begin{enumerate}
+\item\large{\textbf{Test Rig for measuring vibrations in beams}}
+\begin{itemize}
+\item\large{Created a computational model of a test rig for measuring the vibrations of beams from excitations due to rotating eccentric masses using Hyperworks Motionview, a multi-body dynamics software.}
+\item\large{Carried out sensitivity studies on the amplitude of vibrations of the beams by varying different parameters of the model like eccentricity, beam end conditions and beam geometry}
+\end{itemize}
+\item\large\textbf{{Solver development for vibration analysis of a simple car}}
+\begin{itemize}
+\item\large{Developed a simple car model as a 2 degree of freedom system to analyse its vertical dynamics in the form of bounce and pitch motions using MATLAB and Simulink}
+\item\large{Provided excitations to the model in the form of frequency independent and dependent harmonic forces and base excitations in the form of road bumps}
+\item\large{Applied Fast Fourier transforms to analyse the natural frequencies and mode shapes of the system}
+\item\large{Optimized location of force application and amount of damping in the system for minimal excitations}
+\end{itemize}
+\end{enumerate}
+
+\section{\underline{Technical Skills}}
+\vspace{-1.5 em}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|>{\setlength\hsize{1\hsize}\setlength\linewidth{1\hsize}}X|>{\setlength\hsize{1\hsize}\setlength\linewidth{1\hsize}}X|>{\setlength\hsize{1\hsize}\setlength\linewidth{1\hsize}}X|}
+\hline
+&&\\[-2 ex]
+\large{\textbf{Programming}} & \large{\textbf{Softwares}} & \large{\textbf{Miscellaneous}}\\[0.05 in]
+\hline
+&&\\[-5 ex]
+\prog & \soft & \misc\\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{\underline{Additional Relevant Coursework Completed}}
+\begin{enumerate}
+\item\large{\textbf{DelftX, edX:} Introduction to Aerospace Structures and Materials}
+\item\large{\textbf{RWTHX, edX:} Machine Dynamics with MATLAB}
+\item\large{\textbf{LouvainX, edX:} Modelling and Simulation of Multi-Body Systems}
+\end{enumerate}
+
+
+\end{document}
