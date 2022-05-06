@@ -34,8 +34,7 @@
 
 \renewcommand{\maketitle}{
 \begin{center}
-\Large{\textbf{\underline{Ashutosh Mukherjee}}}\\
-\vspace{1ex}
+\Large{\textbf{Ashutosh Mukherjee}}\\
 \large{\textit{Email: ashutosh.mukherjee@rwth-aachen.de}}\\
 \large{\textit{Phone: +4915901950326}}\\
 \href{https://github.com/average-engineer}{\large{\textit{Github Page}}}\\
@@ -83,7 +82,7 @@
 \item\large{\textbf{Multi-Body Dynamics}}
 \begin{itemize}
 \item\large{MSC ADAMS}
-\item\large{Altair Hyperworks Motionview}
+\item\large{Hyperworks Motionview}
 \end{itemize}
 \item\large{\textbf{Finite Element Analysis}}
 \begin{itemize}
