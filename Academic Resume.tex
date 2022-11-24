@@ -1,233 +1,52 @@
 \documentclass{article}
 
-\usepackage[margin = 0.3in]{geometry}
-\usepackage{titlesec}
-\usepackage{titling}
-\usepackage{float}
-\usepackage{makecell}	
-\usepackage{tabularx}
-\usepackage{multirow}
-%\usepackage[hidelinks]{hyperref}
-\usepackage{hyperref}
-\usepackage{tikz}
-\usetikzlibrary{calc}
-\usepackage{verbatim} % For multi-line comments
+% Loading Packages
+\include{Packages.tex}
 
-\hypersetup{
-  colorlinks   = true, %Colours links instead of ugly boxes
-  urlcolor     = blue, %Colour for external hyperlinks
-  linkcolor    = blue, %Colour of internal links
-  citecolor   = red %Colour of citations
-}
 
-\titleformat{\section}
-{\large\bfseries}
-{}
-{0em}
-{}
 
-\titleformat{\subsection}
-{\large\bfseries}
-{}
-{0em}
-{}
+% Loading the title format and content
+\include{Title}
 
-\renewcommand{\maketitle}{
-\begin{center}
-\Large{\textbf{\underline{Ashutosh Mukherjee}}}\\
-\vspace{1ex}
-\large{\textit{Email: ashutosh.mukherjee@rwth-aachen.de}}\\
-\large{\textit{Phone: +4915901950326}}\\
-\href{https://github.com/average-engineer}{\large{\textit{Github Page}}}\\
-\href{https://average-engineer.github.io/Projects-Website-Ashutosh-Mukherjee/}{\large{\textit{Projects Website}}}\\
-\end{center}}
+% Loading all element definitions used in the document
+% Basically the main tabular content which needs to be included in the resume
+\include{Content/Definitions}
 
-%\hypersetup{colorlinks=true,linkcolor=BlueViolet,urlcolor=BlueViolet}
-\def\masters{\large{M.Sc. CAME}}
-\def\mastersgrade{\large{CGPA : $2,0$}}
-\def\rwth{\large{\textit{RWTH Aachen University, Aachen}}}
-\def\degree{\large{B.Tech in Mechanical Engineering}}
-\def\college{\large{\textit{Punjab Engineering College, Chandigarh}}}
-\def\school{\large{High School (10+2)}}
-\def\sname{\large{\textit{Bhavan Vidyalaya, Chandigarh}}}
-\def\tenth{\large{Higher Secondary (10)}}
-\def\cgpa{\large{CGPA : $8.3/10$}}
-\def\boards{\large{Percent : $94.4\%$}}
-\def\tenmarks{\large{CGPA : $10/10$}}
-\def\drdodate{\large{\textbf{September 2020 - July 2021}}}
-\def\siemensdate{\large{\textbf{January 2019 - June 2019}}}
-\def\majordaterig{\large{\textbf{September 2019 - December 2019}}}
-\def\majordateprop{\large{\textbf{February 2020 - May 2020}}}
-\def\majordate{\large{\textbf{September 2019 - May 2020}}}
-\def\prog{
-\begin{enumerate}
-\item\large{\textbf{Scripting Languages}}
-\begin{itemize}
-\item\large{MATLAB}
-\item\large{Python}
-\end{itemize}
-\item\large{\textbf{Programming Languages}}
-\begin{itemize}
-\item\large{C}
-\item\large{Java}
-\end{itemize}
-\item\large{\textbf{Markup Languages}}
-\begin{itemize}
-\item\large{HTML}
-\item\large{LaTeX}
-\end{itemize}
-\end{enumerate}}
-
-\def\soft{
-\begin{enumerate}
-\item\large{\textbf{Multi-Body Dynamics}}
-\begin{itemize}
-\item\large{MSC ADAMS}
-\item\large{Altair Hyperworks Motionview}
-\end{itemize}
-\item\large{\textbf{Finite Element Analysis}}
-\begin{itemize}
-\item\large{ANSYS Workbench}
-\end{itemize}
-\item\large{\textbf{Computer Aided Design}}
-\begin{itemize}
-\item\large{SolidWorks}
-\item\large{Autodesk Fusion 360}
-\end{itemize}
-\end{enumerate}}
-
-\def\misc{
-\begin{itemize}
-\item\large{Simulink}
-\item\large{Arduino Uno}
-\item\large{QMIL, QPROP}
-\item\large{XFOIL}
-\item\large{Geometric Dimensioning and Tolerances (GD\&T)}
-\end{itemize}}
-
-\parindent 0ex %command for removing any indentation in all the paras
+\include{Settings}
 
 \begin{document}
-\begin{tikzpicture}%adding border to the first page
-[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle ($(current page.south east)+(-0.1in,0.2in)$);
+% Adding border to the first page
+%\begin{tikzpicture}
+%[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle %($(current page.south east)+(-0.1in,0.2in)$);
+%\end{tikzpicture}
 
-\end{tikzpicture}
+% Title
 \maketitle
 \vspace{-1 em}
-\hrulefill %horizontal straight line
+\hrulefill % horizontal straight line which divides the title section and the main content
 \vspace{-0.1 in}
-\section{\underline{Education}}
-\vspace{-1.5 em}
-\begin{table}[H]
-\centering
-\begin{tabular}{|m{1.5in}|m{3in}|m{1.5in}|}
-\hline 
-\large{$10/2021 - Ongoing$} & \thead{\masters \\[0.1 in] \rwth}\ & \mastersgrade \\ 
-\hline 
-\large{$8/2016 - 6/2020$} & \thead{\degree \\[0.1 in] \college} &  \cgpa\\ 
-\hline
-\large{$4/2014 - 3/2016$} & \thead{\school \\[0.1 in] \sname} & \boards \\
-\hline
-\end{tabular}
-\end{table}
+
+% Education
+\input{Content/Education} % \include not suitable here since it starts a new page every time
 \vspace{0 in}
 
-\section{\underline{Research Experience}}
-\large{\textbf{Research Associate}}
-\hspace{4.1 in}
-\drdodate\\
-\textit{\large{Thapar Institute of Engineering and Technology, Patiala, India}}\\
-\textbf{Dynamic Modelling and Control Design of Augmentative Lower Extremity Exoskeleton}
-\begin{itemize}
-\item \large{Dynamic modelling of a strength augmentation exoskeleton designed by Defence Bio-Engineering and Electro-Medical Laboratory (DEBEL), a branch of Defence Research and Development Organization (DRDO), India}
-\item\large{Modeling of Human and Lower Extremity Exoskeleton in the form of coupled multi-body systems in which the Human is the master and the exoskeleton is the slave.}
-\item\large{Development of a Model-Based control algorithm making use of Control Partitioning for Strength Augmentation of the Pilot wearing the Lower Extremity Exoskeleton.}
-%\item\large{Engagement in adaptive control design of the exoskeleton, using the developed dynamic model as a theoretical basis}
-\end{itemize}
+% Research Experience
+\input{Content/ResearchExperience}
 
-%\begin{comment}
-\section{\underline{Professional Experience}}
-\large{\textbf{Intern, Order Management and Assembly Department}}
-\hspace{1.2 in}
-\siemensdate\\
-\large{\textit{Siemens Ltd., Vadodara, India}}
-\begin{itemize}
-\item\large{Developed a solver in C for allocation of jobs (processes) to different machines present in the shop floor in order to optimize the aggregate machining lead times}
-\item\large{Designed an induction heating apparatus for heating of rotor wheel discs of steam turbines}
-\item\large{Increased robustness of fixtures for machining of stator guide blade carriers of steam turbines}
-\item\large{Redesigned and fabricated a machining and blading stand for rotor wheel discs of steam turbines }
-\end{itemize}
-%\end{comment}
+% Professional Experience
+\input{Content/ProfExp}
 
-\section{\underline{Other Relevant Experience}}
-\large{\textbf{Undergraduate Thesis Project}}
-\hspace{3in}
-\majordate
-\begin{enumerate}
-\item\large{\textbf{Development of a Test Rig for measuring propeller thrust}}
-%\hspace{0.3 in}
-%\majordaterig
-\begin{itemize}
-\item \large{Built a test stand acting as an alternative to the wind tunnel for measuring the thrust produced by a propeller mounted on it.}
-\item\large{Implemented Arduino Uno controlled circuits for driving the propeller motor using a brush-less DC motor and capturing and displaying the speed of the propeller using an IR sensor based tachometer.}
-\end{itemize}
+% Other relevant experience
+\input{Content/OtherRelExp}
+
+% Relevant Independent Projects
+%\input{Content/IndProj}
+
+% Technical Skills
+\input{Content/TechSkills}
 \vspace{2 in}
-
-\begin{tikzpicture}%adding border to the second page
-[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle ($(current page.south east)+(-0.1in,0.2in)$);
-
-\end{tikzpicture}
-
-\item\large{\textbf{Design and Analysis of a propeller for slow-flying Quad-copters}}
-%\hspace{0. in}
-%\majordateprop
-\begin{itemize}
-\item\large{Generated and modified propeller designs iteratively based on required flying conditions and propeller thrust using QMIL, a first order propeller design tool}
-\item\large{Used QPROP, a solver for calculating propeller performance to generate propeller efficiency and thrust curves for the designed propellers and reiterated the designing process until a design giving desirable propeller performance was achieved.}
-\item\large{Assisted in second order design validation using computational fluid dynamics (CFD) once the propeller design showed better performance than a market standard propeller.}
-\item\large{Developed a solver acting as an alternative to QPROP in MATLAB for calculating the performance characteristics of a propeller based on Blade Element Momentum Theory.}
-\end{itemize}
-\end{enumerate}
-%\vspace{0.1 in}
-%\large{\textbf{Relevant Independent Projects}}
-\section{\underline{Relevant Independent Projects}}
-\begin{enumerate}
-\item\large{\textbf{Impact Location Prediction for Structural Health Monitoring with the aid of Convolutional Neural Network (CNN)}}
-\begin{itemize}
-\item\large{Building regression models based on CNN to predict the locations of impact of steel balls on an aluminium plate. The input data was simulated and experimental piezoelectric sensor data.}
-\item\large{Simulation input data was augmented and experimental data was cleaned and pre-processed before feeding into the CNN.}
-\item\large{Three convolutional layers were used in the CNN to extract the relevant features from the input data.}
-\end{itemize}
-\item\large\textbf{{Solver development for vibration analysis of a simple car}}
-\begin{itemize}
-\item\large{Developed a simple car model as a 2 degree of freedom system to analyse its vertical dynamics in the form of bounce and pitch motions using MATLAB and Simulink}
-\item\large{Provided excitations to the model in the form of frequency independent harmonic forces and base excitations in the form of road bumps modelled as waves with constant wavelengths and amplitudes.}
-\item\large{Applied Fast Fourier transforms to analyse the natural frequencies and mode shapes of the system}
-\item\large{Optimized location of force application and amount of damping in the system for minimal excitations}
-\end{itemize}
-\end{enumerate}
-
-\section{\underline{Technical Skills}}
-\vspace{-1.5 em}
-\begin{table}[H]
-\centering
-\begin{tabularx}{\textwidth}{|>{\setlength\hsize{1\hsize}\setlength\linewidth{1\hsize}}X|>{\setlength\hsize{1\hsize}\setlength\linewidth{1\hsize}}X|>{\setlength\hsize{1\hsize}\setlength\linewidth{1\hsize}}X|}
-\hline
-&&\\[-2 ex]
-\large{\textbf{Programming}} & \large{\textbf{Softwares}} & \large{\textbf{Miscellaneous}}\\[0.05 in]
-\hline
-&&\\[-5 ex]
-\prog & \soft & \misc\\
-\hline
-\end{tabularx}
-\end{table}
-
-%\section{\underline{Additional Relevant Coursework Completed}}
-%\begin{enumerate}
-%\item\large{\textbf{RWTHX, edX:} Machine Dynamics with MATLAB, RWTH Aachen University}
-%\item\large{\textbf{DelftX, edX:} Introduction to Aerospace Structures and Materials, TU Delft}
-%\item\large{\textbf{LouvainX, edX:} Modelling and Simulation of Multi-Body Systems, UCLouvain}
-%\end{enumerate}
+% Relevant Coursework 
+\input{Content/Coursework}
 
 
 \end{document}
