@@ -3,8 +3,6 @@
 % Loading Packages
 \include{Packages.tex}
 
-
-
 % Loading the title format and content
 \include{Title}
 
@@ -15,10 +13,6 @@
 \include{Settings}
 
 \begin{document}
-% Adding border to the first page
-%\begin{tikzpicture}
-%[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle %($(current page.south east)+(-0.1in,0.2in)$);
-%\end{tikzpicture}
 
 % Title
 \maketitle
@@ -26,27 +20,50 @@
 \hrulefill % horizontal straight line which divides the title section and the main content
 \vspace{-0.1 in}
 
+
+% Adding border to the current page
+\begin{comment}
+    \begin{tikzpicture}
+[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle ($(current page.south east)+(-0.1in,0.2in)$);
+\end{tikzpicture}
+\end{comment}
+
 % Education
 \input{Content/Education} % \include not suitable here since it starts a new page every time
 \vspace{0 in}
 
+% Work Experience (Research + Professional Exp)
+\input{Content/WorkExp}
+
+% Adding border to the current page
+\begin{comment}
+    \begin{tikzpicture}
+[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle ($(current page.south east)+(-0.1in,0.2in)$);
+\end{tikzpicture}
+\end{comment}
+
 % Research Experience
-\input{Content/ResearchExperience}
+%\input{Content/ResearchExperience}
 
 % Professional Experience
-\input{Content/ProfExp}
+%\input{Content/ProfExp}
 
 % Other relevant experience
-\input{Content/OtherRelExp}
+%\input{Content/OtherRelExp}
 
 % Relevant Independent Projects
-%\input{Content/IndProj}
+\input{Content/IndProj}
+
 
 % Technical Skills
 \input{Content/TechSkills}
-\vspace{2 in}
+%\vspace{2 in}
+
+% Conference Presentations
+\input{Content/Presentations}
+
 % Relevant Coursework 
-\input{Content/Coursework}
+%\input{Content/Coursework}
 
 
 \end{document}
