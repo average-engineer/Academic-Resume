@@ -1,0 +1,8 @@
+# Ignore .aux file
+*.aux
+# Ignore .out file
+*.out
+# Ignore .log file
+*.log
+# Ignore synctex file
+/Academic Resume.synctex.gz
