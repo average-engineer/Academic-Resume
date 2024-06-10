@@ -16,10 +16,6 @@
 
 % Title
 \maketitle
-\vspace{-1 em}
-\hrulefill % horizontal straight line which divides the title section and the main content
-\vspace{-0.1 in}
-
 
 % Adding border to the current page
 \begin{comment}
@@ -60,7 +56,10 @@
 %\vspace{2 in}
 
 % References
-\input{Content/references}
+\ifnum\refs = 1
+	\input{Content/references}
+\fi
+
 
 % Conference Presentations
 \input{Content/Presentations}

@@ -11,15 +11,30 @@
 {}
 
 \renewcommand{\maketitle}{
-	\begin{center}
-		\begin{tabular}{l r}
+	\ifnum\photo = 1 
+		\noindent\begin{minipage}{0.5\textwidth}
+			\Large{\textbf{\underline{Ashutosh Mukherjee}}}\\
+			\vspace{1ex}\\
+			\large{\textit{Email: ashutosh.mukherjee@rwth-aachen.de}}\\
+			\large{\textit{Phone: +4915901950326}}\\
+			\href{https://average-engineer.github.io/Projects-Website-Ashutosh-Mukherjee/}{\large{\textit{Projects Website}}}\\
+			\href{https://github.com/average-engineer}{\large{\textit{Github}}}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.2\textwidth}
+			\includegraphics[width=1\textwidth]{Photo/profile.jpg}
+		\end{minipage}\\
+	\else
+		\begin{center}
 			\Large{\textbf{\underline{Ashutosh Mukherjee}}}\\
 			\vspace{1ex}
 			\large{\textit{Email: ashutosh.mukherjee@rwth-aachen.de}}\\
 			\large{\textit{Phone: +4915901950326}}\\
 			%\href{https://github.com/average-engineer}{\large{\textit{Github}}}\\
-			\href{https://average-engineer.github.io/Projects-Website-Ashutosh-Mukherjee/}{\large{\textit{Projects Website}}} &
-			\includegraphics[width=0.1\textwidth]{Photo/profile.jpg}
-		\end{tabular}
-	\end{center}	
-}
+			\href{https://average-engineer.github.io/Projects-Website-Ashutosh-Mukherjee/}{\large{\textit{Projects Website}}}
+		\end{center}
+		\vspace{-1 em}
+		\hrulefill % horizontal straight line which divides the title section and the main content
+		\vspace{-0.1 in}
+	\fi
+	}
