@@ -17,55 +17,38 @@
 % Title
 \maketitle
 
-% Adding border to the current page
-\begin{comment}
-    \begin{tikzpicture}
-[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle ($(current page.south east)+(-0.1in,0.2in)$);
-\end{tikzpicture}
-\end{comment}
 
-% Education
-\input{Content/Education} % \include not suitable here since it starts a new page every time
-\vspace{0 in}
-
-% Work Experience (Research + Professional Exp)
-\input{Content/WorkExp}
-
-% Adding border to the current page
-\begin{comment}
-    \begin{tikzpicture}
-[remember picture, overlay] \draw[line width=2pt] ($(current page.north west)+(0.1in,-0.2in)$) rectangle ($(current page.south east)+(-0.1in,0.2in)$);
-\end{tikzpicture}
-\end{comment}
-
-% Research Experience
-%\input{Content/ResearchExperience}
-
-% Professional Experience
-%\input{Content/ProfExp}
-
-% Other relevant experience
-% \input{Content/OtherRelExp}
-
-% Relevant Independent Projects
-%\input{Content/IndProj}
-
-
-% Technical Skills
-\input{Content/TechSkills}
-%\vspace{2 in}
-
-% References
-\ifnum\refs = 1
-	\input{Content/references}
+\ifnum\deutch = 1
+	% Studium
+	\input{Content/Studium}
+	% Berufserfahrung
+	\input{Content/erfahrung}
+	% Fähigkeiten
+	\input{Content/faehigkeiten}
+	% References
+	\ifnum\refs = 1
+		\input{Content/referenz}
+	\fi
+	% Conference Presentations
+	\input{Content/veroeffentlichungen}
+\else
+	% Education
+	\input{Content/Education} % \include not suitable here since it starts a new page every time
+	\vspace{0 in}
+	% Work Experience (Research + Professional Exp)
+	\input{Content/WorkExp}
+	
+	% Technical Skills
+	\input{Content/TechSkills}
+	%\vspace{2 in}
+	
+	% References
+	\ifnum\refs = 1
+		\input{Content/references}
+	\fi
+	
+	% Conference Presentations
+	\input{Content/Presentations}
 \fi
-
-
-% Conference Presentations
-\input{Content/Presentations}
-
-% Relevant Coursework 
-%\input{Content/Coursework}
-
 
 \end{document}
